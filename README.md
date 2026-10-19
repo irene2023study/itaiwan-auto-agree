@@ -4,12 +4,11 @@ Windows 筆電連上 iTaiwan 免費 Wi‑Fi 時，自動在背景按下認證頁
 
 ## 安裝
 
-1. 下載這三個檔案，放在同一個資料夾：
-   - `install.bat`
-   - `install.ps1`
-   - `itaiwan-auto-agree.ps1`
-2. 雙擊 `install.bat`。
+1. 下載 [`itaiwan-setup.bat`](itaiwan-setup.bat)（點進去後按右上角的下載按鈕）。
+2. 雙擊執行。
 3. 看到「安裝完成！」對話框就完成了。
+
+第一次執行時，Windows 可能會跳出「Windows 已保護您的電腦」。這是因為檔案來自網路，點「其他資訊」→「仍要執行」即可。
 
 ## 運作方式
 
