@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iTaiwan自動連線</title>
+<meta name="description" content="Windows 筆電連上 iTaiwan 免費 Wi-Fi 時，自動按下「同意」，不用每次開瀏覽器手動點。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b6e4f'/><path d='M14 26a26 26 0 0 1 36 0M20 33a17 17 0 0 1 24 0M26 40a8 8 0 0 1 12 0' stroke='white' stroke-width='5' fill='none' stroke-linecap='round'/><circle cx='32' cy='47' r='3.5' fill='white'/></svg>">
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --card: #ffffff;
+    --ink: #1c1f1d;
+    --muted: #5d655f;
+    --line: #e2ded4;
+    --brand: #0b6e4f;
+    --brand-ink: #ffffff;
+    --brand-soft: #e3f1ea;
+    --warn-soft: #fff4dc;
+    --warn-line: #f0d48a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141715;
+      --card: #1d211f;
+      --ink: #eef1ee;
+      --muted: #a3aca6;
+      --line: #2f3531;
+      --brand: #3fb98a;
+      --brand-ink: #0c1a14;
+      --brand-soft: #1d3329;
+      --warn-soft: #2e2817;
+      --warn-line: #6b5a26;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 56px 16px 40px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 14px; color: var(--brand); background: var(--brand-soft);
+    padding: 4px 12px; border-radius: 999px; font-weight: 600;
+  }
+  h1 { font-size: clamp(32px, 7vw, 44px); line-height: 1.2; margin: 16px 0 12px; letter-spacing: 0.02em; }
+  .lead { font-size: 18px; color: var(--muted); margin: 0 0 32px; }
+  .download {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    width: 100%; padding: 18px 24px; border-radius: 14px;
+    background: var(--brand); color: var(--brand-ink);
+    font-size: 20px; font-weight: 700; text-decoration: none;
+    box-shadow: 0 6px 20px rgba(11,110,79,.25);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .download:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(11,110,79,.3); }
+  .download:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .meta { text-align: center; font-size: 14px; color: var(--muted); margin: 10px 0 40px; }
+  section {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 24px; margin-bottom: 16px;
+  }
+  h2 { font-size: 20px; margin: 0 0 16px; }
+  ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; }
+  ol.steps li { counter-increment: s; position: relative; padding-left: 44px; margin-bottom: 16px; }
+  ol.steps li:last-child { margin-bottom: 0; }
+  ol.steps li::before {
+    content: counter(s); position: absolute; left: 0; top: 0;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--brand-soft); color: var(--brand);
+    display: grid; place-items: center; font-weight: 700; font-size: 15px;
+  }
+  .note { background: var(--warn-soft); border-color: var(--warn-line); }
+  .note p { margin: 0; }
+  kbd {
+    font-family: inherit; font-size: .9em; background: var(--bg);
+    border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px; padding: 1px 7px;
+  }
+  code {
+    font-family: ui-monospace, Consolas, monospace; font-size: 13px;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+    padding: 10px 12px; display: block; overflow-x: auto; white-space: pre; margin-top: 8px;
+  }
+  ul { padding-left: 20px; margin: 0; }
+  li + li { margin-top: 6px; }
+  footer { text-align: center; font-size: 14px; color: var(--muted); padding: 24px 16px 48px; }
+  footer a { color: var(--brand); }
+</style>
+</head>
+<body>
+<main>
+  <span class="badge">Windows 筆電專用・免費</span>
+  <h1>iTaiwan自動連線</h1>
+  <p class="lead">連上 iTaiwan 免費 Wi‑Fi 時，自動幫你按下「同意」。不用每次打開瀏覽器手動點，連上就能直接用。</p>
+
+  <a class="download" href="/itaiwan-setup.bat" download="itaiwan-setup.bat">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg>
+    下載安裝檔
+  </a>
+  <p class="meta">itaiwan-setup.bat・約 10 KB・適用 Windows 10 / 11</p>
+
+  <section>
+    <h2>安裝只要三步</h2>
+    <ol class="steps">
+      <li>按上面的按鈕，下載 <strong>itaiwan-setup.bat</strong>。</li>
+      <li>到「下載」資料夾，<strong>雙擊</strong>這個檔案。</li>
+      <li>看到「安裝完成！」的視窗，按「確定」就好了。之後每次連上 iTaiwan 都會自動處理。</li>
+    </ol>
+  </section>
+
+  <section class="note">
+    <h2>跳出藍色警告視窗？</h2>
+    <p>第一次執行時，Windows 可能會顯示「Windows 已保護您的電腦」。這是因為檔案來自網路，屬於正常現象。請點<strong>「其他資訊」</strong>，再點<strong>「仍要執行」</strong>即可。</p>
+  </section>
+
+  <section>
+    <h2>它會做什麼？</h2>
+    <ul>
+      <li>只在連上名稱為 <strong>iTaiwan</strong> 的 Wi‑Fi 時才會動作，其他網路完全不受影響。</li>
+      <li>在背景自動送出認證頁的「同意」，不會開瀏覽器、也不會跳出視窗。</li>
+      <li>不會收集或上傳任何個人資料。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>不想用了？</h2>
+    <p>按 <kbd>開始</kbd>，搜尋「PowerShell」並打開，貼上下面這行後按 <kbd>Enter</kbd>：</p>
+    <code>Unregister-ScheduledTask -TaskName iTaiwanAutoAgree -Confirm:$false</code>
+  </section>
+</main>
+<footer>
+  原始碼公開於 <a href="https://github.com/irene2023study/itaiwan-auto-agree">GitHub</a>，歡迎檢查。
+</footer>
+</body>
+</html>
