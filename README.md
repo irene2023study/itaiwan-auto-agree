@@ -2,6 +2,8 @@
 
 Windows 筆電連上 iTaiwan 免費 Wi‑Fi 時，自動在背景按下認證頁的「同意」，不用每次打開瀏覽器手動點選。
 
+👉 下載網站：https://itaiwan.yoto.com.tw
+
 ## 安裝
 
 1. 下載 [`itaiwan-setup.bat`](itaiwan-setup.bat)（點進去後按右上角的下載按鈕）。
