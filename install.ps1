@@ -46,10 +46,10 @@ try {
               "紀錄檔位置：$Dir\log.txt`n`n" +
               "若要移除，請在 PowerShell 執行：`n" +
               'Unregister-ScheduledTask -TaskName iTaiwanAutoAgree -Confirm:$false') `
-             'iTaiwan 自動同意' ([System.Windows.Forms.MessageBoxIcon]::Information)
+             'iTaiwan自動連線' ([System.Windows.Forms.MessageBoxIcon]::Information)
 }
 catch {
     Show-Box ("安裝失敗：`n`n$($_.Exception.Message)`n`n" +
               "如果訊息提到「存取被拒」，請改用系統管理員身分開啟 PowerShell 再執行一次。") `
-             'iTaiwan 自動同意' ([System.Windows.Forms.MessageBoxIcon]::Error)
+             'iTaiwan自動連線' ([System.Windows.Forms.MessageBoxIcon]::Error)
 }
