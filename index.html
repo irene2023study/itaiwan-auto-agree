@@ -134,7 +134,28 @@
   </section>
 </main>
 <footer>
-  原始碼公開於 <a href="https://github.com/irene2023study/itaiwan-auto-agree">GitHub</a>，歡迎檢查。
+  原始碼公開於 <a href="https://github.com/irene2023study/itaiwan-auto-agree">GitHub</a>，歡迎檢查。<br>
+  本頁只匿名統計瀏覽與下載次數，不記錄 IP 或任何個人資料。
 </footer>
+<script>
+  // Anonymous counts only: event type + referring site. No IP, no cookies, no IDs.
+  (function () {
+    var URL = 'https://ruxrubstyedqqtbfsknw.supabase.co/rest/v1/rpc/itaiwan_track';
+    var KEY = 'sb_publishable_GALlUBp_TbrHdW08tusdSg__Hse9A2T';
+    function track(ev) {
+      try {
+        fetch(URL, {
+          method: 'POST',
+          keepalive: true,
+          headers: { 'apikey': KEY, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ p_event: ev, p_referrer: document.referrer || null })
+        }).catch(function () {});
+      } catch (e) {}
+    }
+    track('page_view');
+    var btn = document.querySelector('a.download');
+    if (btn) btn.addEventListener('click', function () { track('download'); });
+  })();
+</script>
 </body>
 </html>
