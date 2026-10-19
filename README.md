@@ -1,4 +1,4 @@
-# iTaiwan 自動同意
+# iTaiwan自動連線
 
 Windows 筆電連上 iTaiwan 免費 Wi‑Fi 時，自動在背景按下認證頁的「同意」，不用每次打開瀏覽器手動點選。
 
